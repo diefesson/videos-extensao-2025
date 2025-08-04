@@ -4,9 +4,6 @@
 n_linhas, n_colunas = map(int, input().split())
 matriz = [list(map(int, input().split())) for _ in range(n_linhas)]
 
-# n_linhas, n_colunas = 2, 2
-# matriz = [[1, 5], [5, 1]]
-
 
 legal = [[False for _ in range(n_colunas)] for _ in range(n_linhas)]
 altura = [[0 for _ in range(n_colunas)] for _ in range(n_linhas)]
@@ -57,6 +54,8 @@ maior = 0
 for i in range(n_linhas - 1):
     for j in range(n_colunas - 1):
         if legal[i][j]:
-            maior = max(maior, (direita[i][j] - esquerda[i][j] + 1) * (altura[i][j] + 1))
+            maior = max(
+                maior, (direita[i][j] - esquerda[i][j] + 1) * (altura[i][j] + 1)
+            )
 
 print(maior)
